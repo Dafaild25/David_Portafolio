@@ -1,15 +1,53 @@
+---
+import '../styles/global.css';
+import '@fontsource/kanit/400.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title="Portafolio",description } = Astro.props;
+
+---	
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		
+		
+		
+
 	</head>
-	<body>
+	<body class="pt-10">
+		
+		<Header />
 		<slot />
+		<script is:browser>
+			const observer = new IntersectionObserver((entries) => {
+			  entries.forEach(entry => {
+				if (entry.isIntersecting) {
+				  entry.target.classList.add('animate-slide-in');
+				} else {
+				  entry.target.classList.remove('animate-slide-in');
+				}
+			  });
+			}, {
+			  threshold: 0.2, // 20% del elemento visible
+			});
+		  
+			document.querySelectorAll('.slide-in-target').forEach(el => {
+			  observer.observe(el);
+			});
+		  </script>
+		
+
+
+		
 	</body>
+
+	
 </html>
 
 <style>
@@ -18,5 +56,14 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-family: 'Kanit', sans-serif;
+		display: flex;
+		flex-direction: column;
 	}
 </style>
+
+
+
+
+
+

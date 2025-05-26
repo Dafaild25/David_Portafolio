@@ -1,0 +1,53 @@
+---
+import SectionMaster from './Contenedor-Principal/section-master.astro';
+import SkillCard from './Adornos/SkillCard.astro';
+import Html from './Icons/Html.astro';
+import Django from './Icons/Django.astro';
+import Tailwind from './Icons/Tailwind.astro';
+import Bootstrap from './Icons/Bootstrap.astro';
+import Bdd from './Icons/Bdd.astro';
+import Docker from './Icons/Docker.astro';
+import Css from './Icons/Css.astro';
+import Laravel from './Icons/Laravel.astro';
+
+const frontendSkills = [
+  { name: 'HTML', color: 'bg-orange-500', icon: Html },
+  { name: 'CSS', color: 'bg-blue-500', icon: Css },
+  { name: 'Tailwind', color: 'bg-blue-100', icon: Tailwind },
+  { name: 'Bootstrap', color: 'bg-purple-200', icon: Bootstrap },
+];
+
+const backendSkills = [
+  { name: 'Django', color: 'bg-green-200', icon: Django },
+  { name: 'Laravel', color: 'bg-red-200', icon: Laravel },
+  { name: 'MySQL', color: 'bg-yellow-200', icon: Bdd },
+  { name: 'JavaScript', color: 'bg-javascript', icon: Docker },
+];
+---
+  <SectionMaster id="skills" class="min-h-screen"showRadial={true}>
+    <div class="flex flex-col items-center slide-in-target opacity-0">
+
+  <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 text-primary-light animate-slide-in">Mis Habilidades</h2>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <!-- Frontend -->
+    <div class="flex flex-col items-center">
+      <h3 class="text-xl font-semibold text-primary-light mb-4">Frontend</h3>
+      <div class="flex flex-wrap justify-center gap-6 max-w-xl">
+        {frontendSkills.map(skill => (
+          <SkillCard name={skill.name} color={skill.color} icon={skill.icon} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="flex flex-col items-center">
+      <h3 class="text-xl font-semibold text-primary-light mb-4">Backend</h3>
+      <div class="flex flex-wrap justify-center gap-6 max-w-xl">
+        {backendSkills.map(skill => (
+          <SkillCard name={skill.name} color={skill.color} icon={skill.icon} />
+        ))}
+      </div>
+    </div>
+  </div>
+</div></SectionMaster>

@@ -1,0 +1,23 @@
+--- 
+const { project } = Astro.props;
+---
+<li class="relative mb-6 sm:mb-0">
+    <div class="flex items-center">
+      <!-- Imagen del proyecto -->
+      <div class="z-10 flex items-center justify-center size-42 bg-white rounded-full ring-4 ring-blue-300 shrink-0 overflow-hidden">
+        <img src={project.image} alt={project.title} class="object-cover w-full h-full" />
+      </div>
+      
+      <!-- Línea horizontal del timeline -->
+      <div class="hidden sm:flex w-full bg-primary-light h-1 "></div>
+    </div>
+  
+    <!-- Contenido del proyecto -->
+    <div class="mt-5 sm:pe-8">
+      <h3 class="text-lg font-semibold text-primary mb-4">{project.title}</h3>
+      <time class="block mb-4 text-sm font-semibold leading-none text-green-600 ">{project.date}</time>
+      <p class="text-justify font-normal text-gray-800 ">{project.description}</p>
+    </div>
+  </li>
+  
+

@@ -1,0 +1,37 @@
+---
+import SectionMaster from './Contenedor-Principal/section-master.astro';
+import LineTime from './Contenedor-Principal/linetime.astro';
+import ProjectCard from './Contenedor-Principal/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Sistema Escolar - Django',
+    date: 'Enero 2025',
+    description: 'Sistema de gestión escolar utilizando Django y PostgreSQL. Incluye control de usuarios, calificaciones, reportes académicos y autenticación con roles personalizados.',
+    image:"/img/unidadEducativa.webp"
+  },
+
+  {
+    title: 'Sistema de Ventas - Laravel',
+    date: 'En desarrollo (2025)',
+    description: 'Sistema de ventas con Laravel, que incluye gestión de productos, clientes, reportes y panel de administración con autenticación segura.',
+    image:"/img/sistemaTienda.webp"
+  }
+];
+---
+
+<SectionMaster id="projects" class="py-32">
+  <div class="flex flex-col items-center justify-center text-center slide-in-target opacity-0">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-16 text-primary">Mis Proyectos</h2>
+
+   
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto place-items-center">
+
+
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </div>
+</SectionMaster>
+

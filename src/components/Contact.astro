@@ -1,0 +1,33 @@
+---
+import SectionMaster from "./Contenedor-Principal/section-master.astro";
+import ContactoInfo from "./Contacto/ContactoInfo.astro";
+import FormularioContacto from "./Contacto/FormularioContacto.astro";
+import Tiktok from "./Icons/Contacto/Tiktok.astro";
+import Linkedin from "./Icons/Contacto/Linkedin.astro";
+import Mail from "./Icons/Contacto/Email.astro";
+
+---
+
+<SectionMaster id="contact" class="py-32">
+  <div class="text-center mb-12 max-w-2xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Contáctame</h2>
+    <p class="text-gray-600 text-lg">
+      ¿Tienes un proyecto o simplemente quieres saludar?  
+      <span class="text-primary font-medium">Estoy abierto a nuevas oportunidades.</span>
+    </p>
+  </div>
+
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start slide-in-target opacity-0">
+    
+    <!-- Info de contacto -->
+    <div class="space-y-6">
+      <ContactoInfo icon={Mail} label="Email" value="davidmgrbn@gmail.com" />
+      <ContactoInfo icon={Linkedin} label="LinkedIn" value="linkedin.com/in/edison-david" link="https://www.linkedin.com/in/edison-david-aimacana-yugsi-4a9181307/" />
+     <ContactoInfo icon={Tiktok} label="Tiktok" value="@David_Cncr" link="https://www.tiktok.com/@edison_david_aimacana_yugsi" />
+    </div>
+
+    <!-- Formulario -->
+    <FormularioContacto />
+
+  </div>
+</SectionMaster>

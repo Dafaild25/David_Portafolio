@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+ 
+    --color-primary-light: #6BCCF2;
+    --color-primary: #131626;
+    
+    --color-secondary-light: #7789F2;
+    --color-secondary: #7789F2;
+
+    --color-cafe: #D9AB91;
+    --color-javascript: #f0da4f;
+}
+
+
+@keyframes slide-in-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+@keyframes neon-flicker {
+    0%, 100% {
+      opacity: 5;
+      text-shadow: 0 0 6px #d9e43f, 0 0 12px #d9e43f, 0 0 18px #d9e43f;
+    }
+    50% {
+      opacity: 0.6;
+      text-shadow: 0 0 2px #d9e43f, 0 0 4px #d9e43f;
+    }
+}
+  
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+.animate-float {
+    animation: float 2s ease-in-out infinite;
+}
+  
+
+
+.copiado {
+    animation: slide-in-from-left 0.5s ease-out forwards;
+  }
+
+.animate-flicker {
+    animation: neon-flicker 1.2s infinite ease-in-out;
+}
+  
+.animate-slide-in {
+    animation: slide-in-from-left 1.2s ease-out forwards;
+}
+
+html ,body{
+    scroll-behavior: smooth;
+    
+}

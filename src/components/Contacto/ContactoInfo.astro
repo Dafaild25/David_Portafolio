@@ -1,0 +1,43 @@
+---
+const { icon: Icon, label, value, link = null } = Astro.props;
+---
+
+<div class="flex items-start gap-4 group">
+  <!-- Icono (ej. Mail) -->
+  <Icon class="w-5 h-5 mt-1 text-primary shrink-0" />
+
+  <div class="flex flex-col">
+    <span class="text-sm text-gray-500">{label}:</span>
+
+    {link ? (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-base font-medium text-blue-600 hover:underline transition"
+      >
+        {value}
+      </a>
+    ) : (
+      <button
+        class="relative text-base font-medium text-gray-800 hover:text-primary transition flex items-center gap-2 focus:outline-none"
+        onclick={`navigator.clipboard.writeText('${value}').then(() => {
+          const msg = this.querySelector('.copiado');
+          msg.classList.remove('hidden');
+          setTimeout(() => msg.classList.add('hidden'), 1800);
+        });`}
+        aria-label="Copiar correo al portapapeles"
+      >
+        {value}
+
+        <!-- 📋 Icono copiado -->
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+
+        <!-- Texto copiado -->
+        <span class="copiado hidden absolute top-full mt-1 left-1/2 -translate-x-1/2 text-xs text-green-500 font-medium">
+          📋 Copiado
+        </span>
+      </button>
+    )}
+  </div>
+</div>

@@ -1,0 +1,26 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="w-full border-t border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-primary backdrop-blur-sm">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center gap-4 text-sm text-gray-600 dark:text-gray-400 ">
+    
+    <!-- Texto -->
+    <p class="hover:text-primary-light transition">
+      © {currentYear} David Aimacaña. Todos los derechos reservados.
+    </p>
+
+    <!-- Redes -->
+    <div class="flex gap-5">
+      <a href="#"  rel="noopener noreferrer" class="hover:text-primary-light transition">
+        GitHub
+      </a>
+      <a href="#"  rel="noopener noreferrer" class="hover:text-primary-light transition">
+        LinkedIn
+      </a>
+      <a href="#"  rel="noopener noreferrer" class="hover:text-primary-light transition">
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
