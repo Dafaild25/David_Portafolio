@@ -1,16 +1,47 @@
-<form class="space-y-6 w-full" onsubmit="event.preventDefault(); alert('Formulario enviado ✉️');">
-    <div>
-      <label class="block text-sm font-semibold text-gray-700">Nombre</label>
-      <input type="text" placeholder="Tu nombre" class="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" required />
-    </div>
-    <div>
-      <label class="block text-sm font-semibold text-gray-700">Correo electrónico</label>
-      <input type="email" placeholder="tucorreo@ejemplo.com" class="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" required />
-    </div>
-    <div>
-      <label class="block text-sm font-semibold text-gray-700">Mensaje</label>
-      <textarea rows="4" placeholder="Cuéntame sobre tu proyecto..." class="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
-    </div>
-    <button type="submit" class="bg-primary text-white font-semibold px-6 py-2 rounded-md hover:bg-primary/90 transition">Enviar mensaje</button>
-  </form>
-  
+<form class="space-y-6 w-full" id="contact-form">
+  <input type="hidden" name="title" value="Formulario Web" />
+
+  <div>
+    <label class="block text-sm font-semibold text-gray-700">Nombre:</label>
+    <input type="text" placeholder="Tu nombre" name="name" class="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" required />
+  </div>
+
+  <div>
+    <label class="block text-sm font-semibold text-gray-700">Correo electrónico:</label>
+    <input type="email" name="email" placeholder="tucorreo@ejemplo.com" class="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" required />
+  </div>
+
+  <div>
+    <label class="block text-sm font-semibold text-gray-700">Mensaje:</label>
+    <textarea rows="4" placeholder="Cuéntame sobre tu proyecto..." name="message" class="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+  </div>
+
+  <button type="submit" class="bg-primary text-white font-semibold px-6 py-2 rounded-md hover:bg-primary/90 transition">Enviar</button>
+</form>
+
+
+<script>
+  // Espera a que cargue emailjs desde el CDN
+  (function () {
+    // Inicializa EmailJS
+    emailjs.init('s0lBsBJp0Uuy0gLLc'); 
+
+    // Selecciona el formulario
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); 
+
+     
+      emailjs.sendForm('service_1h6ycnm', 'template_wexj6j5', this)
+        .then(function () {
+          alert('✅ ¡Mensaje enviado con éxito!');
+          form.reset();
+        }, function (error) {
+          alert('❌ Error al enviar: ' + JSON.stringify(error));
+        });
+    });
+  })();
+</script>
+
+

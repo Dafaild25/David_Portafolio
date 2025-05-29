@@ -66,3 +66,7 @@ html ,body{
     scroll-behavior: smooth;
     
 }
+  
+textarea {
+    resize: none;
+}

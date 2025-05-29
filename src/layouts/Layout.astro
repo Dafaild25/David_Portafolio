@@ -15,6 +15,8 @@ const { title="Portafolio",description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<!-- Cargar EmailJS (versión clásica) -->
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 		
 		
 		
@@ -41,10 +43,6 @@ const { title="Portafolio",description } = Astro.props;
 			  observer.observe(el);
 			});
 		  </script>
-		
-
-
-		
 	</body>
 
 	
