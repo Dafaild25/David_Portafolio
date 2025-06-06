@@ -7,54 +7,70 @@ import DjangoIcon from "./Icons/Django.astro";
 import LaravelIcon from "./Icons/Laravel.astro";
 import TailwindIcon from "./Icons/Tailwind.astro";
 import AstroIcon from "./Icons/Astros.astro";
-
+import Book from "./Icons/Book/Book.astro";
 
 const estudios = [
   {
     name: "Ingeniería en Sistemas de Información",
     src: "/img/uni.webp",
-    alt: "Ingeniería en Sistemas de Información"
+    alt: "Ingeniería en Sistemas de Información",
   },
   {
     name: "Tecnologado en Electromecánica",
     src: "/img/isuc.webp",
-    alt: "Tecnologado en Electromecánica"
+    alt: "Tecnologado en Electromecánica",
   },
   {
     name: "Bachiller en Máquinas y Equipos Eléctricos",
     src: "/img/rbn.webp",
-    alt: "Bachiller en Máquinas y Equipos Eléctricos"
-  }
+    alt: "Bachiller en Máquinas y Equipos Eléctricos",
+  },
 ];
 ---
 
 <SectionMaster id="about" showRadial={true} class="py-32">
-  <div class="flex flex-col-reverse md:flex-row items-center max-w-5xl mx-auto justify-center gap-12 slide-in-target opacity-0">
-
+  <div
+    class="flex flex-col-reverse md:flex-row items-center max-w-5xl mx-auto justify-center gap-12 slide-in-target opacity-0"
+  >
     <!-- 📝 Texto -->
     <div class="md:w-1/2 space-y-6">
-      <h2 class="text-3xl sm:text-4xl font-bold text-primary-light">Sobre mí</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold text-primary-light">
+        Sobre mí
+      </h2>
+
+      <p
+        class="text-white/90 text-base md:text-lg leading-relaxed text-justify justify-center items-center"
+      >
+        Qué tal 👋, mi nombre es <span class="text-amber-200"
+          >David Aimacaña</span
+        >, me gusta la programación y la tecnología, tengo 27 años, resido en la
+        ciudad de Latacunga, Ecuador
+      </p>
 
       <p class="text-white/90 text-base md:text-lg leading-relaxed">
-        Que tal 👋 mi nombre es <span  class="text-amber-200">David Aimacaña</span>, me gusta la programación y la tecnología, tengo  27 años, residente en la ciudad de Latacunga, Ecuador.
-      </p>
-      <p class="text-white/90 text-base md:text-lg leading-relaxed">Formación académica:
-        <ul class="max-w-md space-y-4 text-gray-500 list-none dark:text-gray-400">
-          
-          {estudios.map((estudio) => (
-            <Listado>
-              <ImgRedonda src={estudio.src} alt={estudio.alt} />
-              <span class="ml-2">{estudio.name}</span>
-            </Listado>
-          ))}
+        Formación académica:
+        <ul
+          class="max-w-md space-y-4 text-gray-500 list-none dark:text-gray-400"
+        >
+          {
+            estudios.map((estudio) => (
+              <Listado>
+                <ImgRedonda src={estudio.src} alt={estudio.alt} />
+                <span class="ml-2">{estudio.name}</span>
+              </Listado>
+            ))
+          }
         </ul>
-        
       </p>
 
-      <p class= "italic text-white/90 md:text-sm leading-relaxed">
-        Autodidacta, comprometido con el aprendizaje continuo y siempre abierto a nuevos retos.
+      <p class="italic text-white/90 md:text-sm leading-relaxed">
+        Autodidacta, comprometido con el aprendizaje continuo y siempre abierto
+        a nuevos retos. 
       </p>
-      
+      <p class="italic text-white/90 md:text-sm leading-relaxed flex flex-row items-center gap-2">
+        <Book class="size-6" />
+        <a href="https://a.co/d/bunK6bI" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition">Presiona aqui para leer mi Ebook  </a>
+      </p>
     </div>
 
     <!-- 🖼 Imagen con efecto hover -->
@@ -78,15 +94,16 @@ const estudios = [
           <AstroIcon class="w-8 h-8 opacity-60 text-fuchsia-500" />
         </div>
       </div>
-    
-      <!-- Imagen principal -->
-      <img
-        src="/img/davidMin.jpg"
-        alt="David Aimacaña"
-        class="rounded-xl shadow-xl w-72 h-auto object-cover transition duration-300 hover:scale-105 hover:shadow-2xl"
-      />
-    </div>
-    
 
+      <!-- Imagen principal -->
+      
+        <img
+          src="/img/davidMin.jpg"
+          alt="David Aimacaña"
+          class="rounded-xl shadow-xl w-72 h-auto object-cover transition duration-300 hover:scale-105 hover:shadow-2xl"
+        />
+       
+      
+    </div>
   </div>
 </SectionMaster>

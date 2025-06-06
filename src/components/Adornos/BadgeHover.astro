@@ -4,7 +4,7 @@ const { color, icon: Icon } = Astro.props;
 ---
 
 <span
-  class={`inline-flex items-center gap-2 bg-${color}-100 text-${color}-800 text-xs font-medium px-3 py-1 rounded-sm border border-${color}-400 transition duration-300 ease-in-out hover:bg-${color}-500 hover:text-primary-green hover:shadow-lg hover:scale-[1.03]`}
+  class={`inline-flex items-center gap-2 bg-${color}-100 text-${color}-800 text-xs font-medium px-3 py-1 rounded-sm border border-${color}-400 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white hover:shadow-lg hover:scale-[1.03]`}
 >
   {Icon && <Icon class="size-4" />}
   <slot />
